@@ -33,7 +33,7 @@ body {
   margin-bottom: 12px;
 }
 
-.form-group{
+.form-group {
   margin-bottom: 24px;
 }
 
@@ -62,4 +62,21 @@ body {
   padding: 12px;
   color: #5a7d8a;
   font-weight: 500;
+}
+
+.input-radio {
+  margin-inline: 24px;
+  border: 1px solid #6B94A8;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.input-radio .radio {
+  margin-left: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.payment-type {
+  margin-left: 16px;
 }

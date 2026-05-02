@@ -35,6 +35,18 @@ export default function App() {
             </div>
           </div>
 
+          <div className="form-group">
+            <h4>Kira ve İpotek Tipi</h4>
+            <div className="input-radio">
+              <input type="radio" className='radio' name='payment'/>
+              <span className="payment-type">Geri Ödeme</span>
+            </div>
+            <div className="input-radio">
+              <input type="radio" className='radio' name='payment'/>
+              <span className="payment-type">Sadece Faiz</span>
+            </div>
+          </div>
+
         </main>
       </div>
     </>
