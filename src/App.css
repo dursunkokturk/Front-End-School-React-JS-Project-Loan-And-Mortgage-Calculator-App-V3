@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,26 @@ body {
   font-family: Plus Jakarta Sans;
 }
 
-h2{
+.container .header {
+  margin-bottom: 24px;
+}
+
+.container .header h2 {
   font-weight: 700;
   color: #133041;
+  margin-top: 32px;
+  margin-inline: 24px;
+  margin-bottom: 8px;
+}
+
+.container .header a h4 {
+  font-weight: 500;
+  color: #4E6E7E;
+  margin-left: 24px;
+}
+
+.container .main h4 {
+  font-weight: 500;
+  margin-left: 24px;
+  color: #4E6E7E;
 }
