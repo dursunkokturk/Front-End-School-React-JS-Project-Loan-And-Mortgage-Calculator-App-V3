@@ -27,6 +27,14 @@ export default function App() {
             </div>
           </div>
 
+          <div className="form-group">
+            <h4>Yüzde Oranı</h4>
+            <div className="input-box">
+              <input type="text" defaultValue={5.25} />
+              <span className="prefix">%</span>
+            </div>
+          </div>
+
         </main>
       </div>
     </>
