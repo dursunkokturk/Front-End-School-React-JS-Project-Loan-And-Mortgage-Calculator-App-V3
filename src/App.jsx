@@ -10,6 +10,7 @@ export default function App() {
           <a href=""><h4>Hepsini Sil</h4></a>
         </header>
         <main className='main'>
+          
           <div className="form-group">
             <h4>Kredi Tutarı</h4>
             <div className="input-box">
@@ -17,6 +18,15 @@ export default function App() {
               <input type="text" defaultValue={100.000} />
             </div>
           </div>
+
+          <div className="form-group">
+            <h4>İpotek Vadesi</h4>
+            <div className="input-box">
+              <input type="text" defaultValue={12} />
+              <span className="prefix">Yıl</span>
+            </div>
+          </div>
+
         </main>
       </div>
     </>
