@@ -80,3 +80,21 @@ body {
 .payment-type {
   margin-left: 16px;
 }
+
+button{
+  font-size: 18px;
+  font-weight: 700;
+  margin-inline: 24px;
+  background-color: #D8DB2F;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 46px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button img{
+  margin-right: 6px;
+}

@@ -1,3 +1,4 @@
+import Calculator from './assets/img/calculator.png'
 import './App.css'
 
 export default function App() {
@@ -46,7 +47,7 @@ export default function App() {
               <span className="payment-type">Sadece Faiz</span>
             </div>
           </div>
-
+          <button><img src={Calculator} alt="" />Geri Ödemeleri Hesapla</button>
         </main>
       </div>
     </>
