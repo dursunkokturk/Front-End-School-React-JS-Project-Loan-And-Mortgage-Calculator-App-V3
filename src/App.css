@@ -170,10 +170,11 @@ button img {
 }
 
 @media (min-width:768px) {
-  body{
+  body {
     background-color: #E4F4FD;
     margin-top: 40px;
   }
+
   .container {
     width: 688px;
     background-color: white;
@@ -181,6 +182,7 @@ button img {
     border-radius: 24px;
     margin-inline: auto;
   }
+
   .container .header {
     display: flex;
     justify-content: space-between;
@@ -194,7 +196,18 @@ button img {
   .mortgage-term-and-interest-rate input {
     width: 245px;
   }
-  .mortgage-term-and-interest-rate .form-group{
+
+  .mortgage-term-and-interest-rate .form-group {
     padding-right: 30px;
+  }
+
+  .footer {
+    border-radius: 0 0 24px 24px;
+    margin-inline: -40px;
+  }
+
+  .footer h2,
+  h4 {
+    text-align: center;
   }
 }
