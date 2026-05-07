@@ -47,7 +47,9 @@ export default function App() {
               <span className="payment-type">Sadece Faiz</span>
             </div>
           </div>
-          <button><img src={Calculator} alt="" />Geri Ödemeleri Hesapla</button>
+          <div className="form-button">
+            <button><img src={Calculator} alt="" />Geri Ödemeleri Hesapla</button>
+          </div>
         </main>
       </div>
     </>

@@ -26,6 +26,9 @@ body {
   margin-left: 24px;
 }
 
+main{
+  display: block;
+}
 .container .main h4 {
   font-weight: 500;
   margin-left: 24px;
@@ -81,6 +84,10 @@ body {
   margin-left: 16px;
 }
 
+.form-button{
+  margin-bottom: 32px;
+}
+
 button{
   font-size: 18px;
   font-weight: 700;
@@ -88,7 +95,7 @@ button{
   background-color: #D8DB2F;
   border: none;
   border-radius: 999px;
-  padding: 16px 46px;
+  padding: 16px 38px;
 
   display: flex;
   justify-content: center;
