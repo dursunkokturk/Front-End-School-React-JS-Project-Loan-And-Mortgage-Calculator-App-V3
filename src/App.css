@@ -8,30 +8,32 @@ body {
   font-family: Plus Jakarta Sans;
 }
 
+.container {
+  margin-inline: 24px;
+}
+
 .container .header {
+  padding-top: 32px;
   margin-bottom: 24px;
 }
 
 .container .header h2 {
   font-weight: 700;
   color: #133041;
-  margin-top: 32px;
-  margin-inline: 24px;
   margin-bottom: 8px;
 }
 
-.container .header a h4 {
+.container .header .clear-btn {
   font-weight: 500;
   color: #4E6E7E;
-  margin-left: 24px;
 }
 
-main{
+main {
   display: block;
 }
+
 .container .main h4 {
   font-weight: 500;
-  margin-left: 24px;
   color: #4E6E7E;
   margin-bottom: 12px;
 }
@@ -47,7 +49,6 @@ main{
   border-radius: 6px;
   overflow: hidden;
   background: white;
-  margin-inline: 24px;
 }
 
 .input-box input {
@@ -68,7 +69,6 @@ main{
 }
 
 .input-radio {
-  margin-inline: 24px;
   border: 1px solid #6B94A8;
   border-radius: 4px;
   margin-bottom: 12px;
@@ -84,11 +84,14 @@ main{
   margin-left: 16px;
 }
 
-.form-button{
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 32px;
 }
 
-button{
+button {
   font-size: 18px;
   font-weight: 700;
   margin-inline: 24px;
@@ -102,7 +105,7 @@ button{
   align-items: center;
 }
 
-button img{
+button img {
   margin-right: 6px;
 }
 
@@ -116,7 +119,7 @@ button img{
   align-items: center;
 }
 
-.footer img{
+.footer img {
   padding-top: 32px;
   padding-bottom: 16px;
 }
@@ -128,7 +131,7 @@ button img{
   padding-bottom: 16px;
 }
 
-.footer h4{
+.footer h4 {
   color: #9ABED5;
   font-weight: 500;
   padding-bottom: 24px;
@@ -140,27 +143,36 @@ button img{
   padding-left: 16px;
   border-top: 4px solid yellow;
 }
-.footer .monthly-payment h4{
+
+.footer .monthly-payment h4 {
   color: #9ABED5;
   font-weight: 500;
   padding-top: 24px;
   padding-bottom: 8px;
 }
 
-.footer .monthly-payment h1{
+.footer .monthly-payment h1 {
   font-size: 40px;
   font-weight: 700;
   color: #D8DB2F;
   padding-bottom: 16px;
 }
 
-.separator{
+.separator {
   color: #9ABED540;
   height: 1px;
   width: auto;
   padding-bottom: 16px;
 }
 
-.total-amount{
+.total-amount {
   padding-bottom: 24px;
+}
+
+@media (min-width:768px) {
+  .container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

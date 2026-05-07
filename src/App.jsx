@@ -9,7 +9,7 @@ export default function App() {
       <div className="container">
         <header className='header'>
           <h2>Kredi ve İpotek Hesaplama</h2>
-          <a href=""><h4>Hepsini Sil</h4></a>
+          <a href="" className='clear-btn'>Hepsini Sil</a>
         </header>
         <main className='main'>
           
