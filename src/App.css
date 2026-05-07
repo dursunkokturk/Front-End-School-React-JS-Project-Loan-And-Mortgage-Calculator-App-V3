@@ -175,4 +175,15 @@ button img {
     justify-content: space-between;
     align-items: center;
   }
+
+  .mortgage-term-and-interest-rate {
+    display: flex;
+  }
+
+  .mortgage-term-and-interest-rate input {
+    width: 292px;
+  }
+  .mortgage-term-and-interest-rate .form-group{
+    padding-right: 30px;
+  }
 }

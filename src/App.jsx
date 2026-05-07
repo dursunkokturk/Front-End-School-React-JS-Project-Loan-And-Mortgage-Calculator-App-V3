@@ -12,7 +12,10 @@ export default function App() {
           <a href="" className='clear-btn'>Hepsini Sil</a>
         </header>
         <main className='main'>
-          
+
+          <div className="loan-amount-and-mortgage-term">
+
+          </div>
           <div className="form-group">
             <h4>Kredi Tutarı</h4>
             <div className="input-box">
@@ -21,30 +24,32 @@ export default function App() {
             </div>
           </div>
 
-          <div className="form-group">
-            <h4>İpotek Vadesi</h4>
-            <div className="input-box">
-              <input type="text" placeholder='' />
-              <span className="prefix">Yıl</span>
+          <div className="mortgage-term-and-interest-rate">
+            <div className="form-group">
+              <h4>İpotek Vadesi</h4>
+              <div className="input-box">
+                <input type="text" placeholder='' />
+                <span className="prefix">Yıl</span>
+              </div>
             </div>
-          </div>
 
-          <div className="form-group">
-            <h4>Yüzde Oranı</h4>
-            <div className="input-box">
-              <input type="text" placeholder='' />
-              <span className="prefix">%</span>
+            <div className="form-group">
+              <h4>Yüzde Oranı</h4>
+              <div className="input-box">
+                <input type="text" placeholder='' />
+                <span className="prefix">%</span>
+              </div>
             </div>
           </div>
 
           <div className="form-group">
             <h4>Kira ve İpotek Tipi</h4>
             <div className="input-radio">
-              <input type="radio" className='radio' name='payment'/>
+              <input type="radio" className='radio' name='payment' />
               <span className="payment-type">Geri Ödeme</span>
             </div>
             <div className="input-radio">
-              <input type="radio" className='radio' name='payment'/>
+              <input type="radio" className='radio' name='payment' />
               <span className="payment-type">Sadece Faiz</span>
             </div>
           </div>
