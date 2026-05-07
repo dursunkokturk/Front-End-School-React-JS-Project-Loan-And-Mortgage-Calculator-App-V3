@@ -1,4 +1,5 @@
 import Calculator from './assets/img/calculator.png'
+import CalculateFooter from './assets/img/calculate-footer.png'
 import './App.css'
 
 export default function App() {
@@ -16,14 +17,14 @@ export default function App() {
             <h4>Kredi Tutarı</h4>
             <div className="input-box">
               <span className="prefix">₺</span>
-              <input type="text" defaultValue={100.000} />
+              <input type="text" placeholder='' />
             </div>
           </div>
 
           <div className="form-group">
             <h4>İpotek Vadesi</h4>
             <div className="input-box">
-              <input type="text" defaultValue={12} />
+              <input type="text" placeholder='' />
               <span className="prefix">Yıl</span>
             </div>
           </div>
@@ -31,7 +32,7 @@ export default function App() {
           <div className="form-group">
             <h4>Yüzde Oranı</h4>
             <div className="input-box">
-              <input type="text" defaultValue={5.25} />
+              <input type="text" placeholder='' />
               <span className="prefix">%</span>
             </div>
           </div>
@@ -52,7 +53,10 @@ export default function App() {
           </div>
         </main>
         <footer className='footer'>
-          <h2>Sonuçlarınız</h2>
+          <img src={CalculateFooter} alt="" />
+          <h2>Sonuçlar Burada Gösterilir</h2>
+          <h4>Formu doldurun ve aylık taksit tutarlarınızı görmek için “taksitleri hesapla” düğmesine tıklayın.</h4>
+          {/* <h2>Sonuçlarınız</h2>
           <h4>Sağladığınız bilgilere göre sonuçlarınız aşağıda gösterilmektedir. Sonuçları değiştirmek için formu düzenleyin ve “geri ödemeleri hesapla” seçeneğine tekrar tıklayın.</h4>
           <div className="monthly-payment">
             <h4>Aylık Taksitleriniz</h4>
@@ -60,7 +64,7 @@ export default function App() {
             <div className="separator"></div>
             <h4>Vade boyunca ödeyeceğiniz toplam tutar</h4>
             <h2 className='total-amount'><span>₺</span>--</h2>
-          </div>
+          </div> */}
         </footer>
       </div>
     </>

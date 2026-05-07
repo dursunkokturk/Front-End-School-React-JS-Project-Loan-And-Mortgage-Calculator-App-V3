@@ -110,7 +110,17 @@ button img{
   background-color: #133041;
   padding-inline: 24px;
   padding-bottom: 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.footer img{
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
 .footer h2 {
   color: white;
   font-weight: 700;
