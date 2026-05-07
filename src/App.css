@@ -105,3 +105,52 @@ button{
 button img{
   margin-right: 6px;
 }
+
+.footer {
+  background-color: #133041;
+  padding-inline: 24px;
+  padding-bottom: 32px;
+}
+.footer h2 {
+  color: white;
+  font-weight: 700;
+  padding-top: 32px;
+  padding-bottom: 16px;
+}
+
+.footer h4{
+  color: #9ABED5;
+  font-weight: 500;
+  padding-bottom: 24px;
+}
+
+.footer .monthly-payment {
+  background-color: #031e2e;
+  border-radius: 8px;
+  padding-left: 16px;
+  border-top: 4px solid yellow;
+}
+.footer .monthly-payment h4{
+  color: #9ABED5;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.footer .monthly-payment h1{
+  font-size: 40px;
+  font-weight: 700;
+  color: #D8DB2F;
+  padding-bottom: 16px;
+}
+
+.separator{
+  color: #9ABED540;
+  height: 1px;
+  width: auto;
+  padding-bottom: 16px;
+}
+
+.total-amount{
+  padding-bottom: 24px;
+}

@@ -51,6 +51,17 @@ export default function App() {
             <button><img src={Calculator} alt="" />Geri Ödemeleri Hesapla</button>
           </div>
         </main>
+        <footer className='footer'>
+          <h2>Sonuçlarınız</h2>
+          <h4>Sağladığınız bilgilere göre sonuçlarınız aşağıda gösterilmektedir. Sonuçları değiştirmek için formu düzenleyin ve “geri ödemeleri hesapla” seçeneğine tekrar tıklayın.</h4>
+          <div className="monthly-payment">
+            <h4>Aylık Taksitleriniz</h4>
+            <h1>--</h1>
+            <div className="separator"></div>
+            <h4>Vade boyunca ödeyeceğiniz toplam tutar</h4>
+            <h2 className='total-amount'><span>₺</span>--</h2>
+          </div>
+        </footer>
       </div>
     </>
   )
