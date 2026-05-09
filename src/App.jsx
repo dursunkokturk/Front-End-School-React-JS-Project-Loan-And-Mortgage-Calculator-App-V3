@@ -6,6 +6,7 @@ import { useState } from 'react'
 export default function App() {
   const [mortgageAmount, setMortgageAmount] = useState("");
   const [mortgageTerm, setMortgageTerm] = useState("");
+  const [mortgageInterestRate, setMortgageInterestRate] = useState("");
 
   return (
     <>
@@ -56,7 +57,15 @@ export default function App() {
               <div className="form-group">
                 <h4>Yüzde Oranı</h4>
                 <div className="input-box">
-                  <input type="text" placeholder='' />
+                  <input
+                    type="text"
+                    value={mortgageInterestRate}
+                    placeholder='5.25'
+                    onCanPlay={(e)=>{
+                      const value=e.target.value;
+                      setMortgageInterestRate(value);
+                    }}
+                  />
                   <span className="prefix">%</span>
                 </div>
               </div>
