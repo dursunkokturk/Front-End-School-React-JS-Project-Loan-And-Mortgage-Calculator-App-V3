@@ -7,56 +7,58 @@ export default function App() {
   return (
     <>
       <div className="container">
-        <header className='header'>
-          <h2>Kredi ve İpotek Hesaplama</h2>
-          <a href="" className='clear-btn'>Hepsini Sil</a>
-        </header>
-        <main className='main'>
+        <div className="header-and-main">
+          <header className='header'>
+            <h2>Kredi ve İpotek Hesaplama</h2>
+            <a href="" className='clear-btn'>Hepsini Sil</a>
+          </header>
+          <main className='main'>
 
-          <div className="loan-amount-and-mortgage-term">
+            <div className="loan-amount-and-mortgage-term">
 
-          </div>
-          <div className="form-group">
-            <h4>Kredi Tutarı</h4>
-            <div className="input-box">
-              <span className="prefix">₺</span>
-              <input type="text" placeholder='' />
             </div>
-          </div>
-
-          <div className="mortgage-term-and-interest-rate">
             <div className="form-group">
-              <h4>İpotek Vadesi</h4>
+              <h4>Kredi Tutarı</h4>
               <div className="input-box">
+                <span className="prefix">₺</span>
                 <input type="text" placeholder='' />
-                <span className="prefix">Yıl</span>
+              </div>
+            </div>
+
+            <div className="mortgage-term-and-interest-rate">
+              <div className="form-group">
+                <h4>İpotek Vadesi</h4>
+                <div className="input-box">
+                  <input type="text" placeholder='' />
+                  <span className="prefix">Yıl</span>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <h4>Yüzde Oranı</h4>
+                <div className="input-box">
+                  <input type="text" placeholder='' />
+                  <span className="prefix">%</span>
+                </div>
               </div>
             </div>
 
             <div className="form-group">
-              <h4>Yüzde Oranı</h4>
-              <div className="input-box">
-                <input type="text" placeholder='' />
-                <span className="prefix">%</span>
+              <h4>Kira ve İpotek Tipi</h4>
+              <div className="input-radio">
+                <input type="radio" className='radio' name='payment' />
+                <span className="payment-type">Geri Ödeme</span>
+              </div>
+              <div className="input-radio">
+                <input type="radio" className='radio' name='payment' />
+                <span className="payment-type">Sadece Faiz</span>
               </div>
             </div>
-          </div>
-
-          <div className="form-group">
-            <h4>Kira ve İpotek Tipi</h4>
-            <div className="input-radio">
-              <input type="radio" className='radio' name='payment' />
-              <span className="payment-type">Geri Ödeme</span>
+            <div className="form-button">
+              <button><img src={Calculator} alt="" />Taksitleri Hesapla</button>
             </div>
-            <div className="input-radio">
-              <input type="radio" className='radio' name='payment' />
-              <span className="payment-type">Sadece Faiz</span>
-            </div>
-          </div>
-          <div className="form-button">
-            <button><img src={Calculator} alt="" />Taksitleri Hesapla</button>
-          </div>
-        </main>
+          </main>
+        </div>
         <footer className='footer'>
           <img src={CalculateFooter} alt="" />
           <h2>Sonuçlar Burada Gösterilir</h2>

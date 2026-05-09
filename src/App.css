@@ -212,3 +212,72 @@ button img {
     text-align: center;
   }
 }
+
+@media (min-width:1110px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    overflow: hidden;
+    padding-inline: 0px;
+  }
+
+  .header-and-main {
+    /* width: 500px; */
+    flex: 1;
+    padding-inline: 40px;
+    padding-bottom: 40px;
+  }
+
+  .container .header {
+    padding-top: 40px;
+  }
+
+
+  .mortgage-term-and-interest-rate {
+    display: flex;
+    gap: 24px;
+  }
+
+  .mortgage-term-and-interest-rate .form-group {
+    flex: 1;
+    padding-right: 0;
+  }
+
+  .mortgage-term-and-interest-rate input {
+    width: 100%;
+  }
+
+
+  .footer {
+    flex: 1;
+    margin-inline: 0;
+    border-radius: 0 24px 24px 80px;
+    justify-content: center;
+    padding-inline: 40px;
+  }
+
+  .footer img {
+    padding-top: 0;
+  }
+
+  .footer h2 {
+    text-align: center;
+    font-size: 32px;
+    padding-top: 24px;
+  }
+
+  .footer h4 {
+    text-align: center;
+    max-width: 360px;
+    line-height: 1.5;
+  }
+}
