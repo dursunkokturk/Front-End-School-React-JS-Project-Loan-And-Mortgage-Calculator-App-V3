@@ -1,8 +1,10 @@
 import Calculator from './assets/img/calculator.png'
 import CalculateFooter from './assets/img/calculate-footer.png'
 import './App.css'
+import { useState } from 'react'
 
 export default function App() {
+  const [mortgageAmount, setMortgageAmount] = useState("");
 
   return (
     <>
@@ -21,7 +23,16 @@ export default function App() {
               <h4>Kredi Tutarı</h4>
               <div className="input-box">
                 <span className="prefix">₺</span>
-                <input type="text" placeholder='' />
+                <input
+                  type="text"
+                  value={mortgageAmount}
+                  placeholder=''
+
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setMortgageAmount(value);
+                  }}
+                />
               </div>
             </div>
 
