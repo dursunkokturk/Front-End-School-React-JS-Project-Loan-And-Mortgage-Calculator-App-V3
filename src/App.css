@@ -181,6 +181,7 @@ button img {
     padding-inline: 40px;
     border-radius: 24px;
     margin-inline: auto;
+    margin-bottom: 40px;
   }
 
   .container .header {
