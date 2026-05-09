@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 export default function App() {
   const [mortgageAmount, setMortgageAmount] = useState("");
+  const [mortgageTerm, setMortgageTerm] = useState("");
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function App() {
                 <input
                   type="text"
                   value={mortgageAmount}
-                  placeholder=''
+                  placeholder='50.000'
 
                   onChange={(e) => {
                     const value = e.target.value;
