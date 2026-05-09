@@ -41,7 +41,14 @@ export default function App() {
               <div className="form-group">
                 <h4>İpotek Vadesi</h4>
                 <div className="input-box">
-                  <input type="text" placeholder='' />
+                  <input type="text"
+                    value={mortgageTerm}
+                    placeholder='5'
+
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setMortgageTerm(value);
+                    }} />
                   <span className="prefix">Yıl</span>
                 </div>
               </div>
