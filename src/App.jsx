@@ -8,6 +8,7 @@ export default function App() {
   const [mortgageTerm, setMortgageTerm] = useState("");
   const [interestRate, setInterestRate] = useState("");
   const [mortgageType, setMortgageType] = useState("");
+  const [activeField, setActiveField] = useState("");
 
   return (
     <>
@@ -25,11 +26,13 @@ export default function App() {
             <div className="form-group">
               <h4>Kredi Tutarı</h4>
               <div className="input-box">
-                <span className="prefix">₺</span>
+                <span className={`prefix ${activeField === "amount" ? "active-prefix" : ""}`}>₺</span>
                 <input
                   type="text"
                   value={mortgageAmount}
                   placeholder='50.000'
+                  onFocus={() => setActiveField("amount")}
+                  onBlur={() => setActiveField("")}
 
                   onChange={(e) => {
                     const value = e.target.value;
@@ -46,12 +49,14 @@ export default function App() {
                   <input type="text"
                     value={mortgageTerm}
                     placeholder='5'
+                    onFocus={() => setActiveField("term")}
+                    onBlur={() => setActiveField("")}
 
                     onChange={(e) => {
                       const value = e.target.value;
                       setMortgageTerm(value);
                     }} />
-                  <span className="prefix">Yıl</span>
+                  <span className={`prefix ${activeField === "term" ? "active-prefix" : ""}`}>Yıl</span>
                 </div>
               </div>
 
@@ -62,40 +67,47 @@ export default function App() {
                     type="text"
                     value={interestRate}
                     placeholder='5.25'
+                    onFocus={() => setActiveField("interest")}
+                    onBlur={() => setActiveField("")}
+
                     onChange={(e) => {
                       const value = e.target.value;
                       setInterestRate(value);
                     }}
                   />
-                  <span className="prefix">%</span>
+                  <span className={`prefix ${activeField === "interest" ? "active-prefix" : ""}`}>%</span>
                 </div>
               </div>
             </div>
 
             <div className="form-group">
               <h4>Kira ve İpotek Tipi</h4>
-              <div className="input-radio">
+              <label className={`input-radio ${mortgageType === "repayment" ? "active-radio" : ""
+                }`}>
                 <input
                   type="radio"
                   className='radio'
                   name='payment'
                   value="repayment"
                   checked={mortgageType === "repayment"}
+                  onBlur={() => setActiveField("")}
                   onChange={(e) => setMortgageType(e.target.value)}
                 />
-                <span className="payment-type">Geri Ödeme</span>
-              </div>
-              <div className="input-radio">
+                <span className='payment-type'>Geri Ödeme</span>
+              </label>
+              <label className={`input-radio ${mortgageType === "interest-only" ? "active-radio" : ""
+                }`}>
                 <input
                   type="radio"
                   className='radio'
                   name='payment'
                   value="interest-only"
                   checked={mortgageType === "interest-only"}
+                  onBlur={() => setActiveField("")}
                   onChange={(e) => setMortgageType(e.target.value)}
                 />
                 <span className="payment-type">Sadece Faiz</span>
-              </div>
+              </label>
             </div>
             <div className="form-button">
               <button><img src={Calculator} alt="" />Taksitleri Hesapla</button>

@@ -72,6 +72,14 @@ main {
   border: 1px solid #6B94A8;
   border-radius: 4px;
   margin-bottom: 12px;
+
+  display: flex;
+  align-items: center;
+}
+
+.active-radio {
+  border: 1px solid #D8DB2F; /* sarı */
+  background-color: rgba(216, 219, 47, 0.08);
 }
 
 .input-radio .radio {
@@ -241,7 +249,6 @@ button img {
     padding-top: 40px;
   }
 
-
   .mortgage-term-and-interest-rate {
     display: flex;
     gap: 24px;
@@ -256,7 +263,34 @@ button img {
     width: 100%;
   }
 
+  .input-box input:hover {
+    cursor: pointer;
+  }
 
+  .input-box input:focus {
+    cursor: text;
+  }
+
+  .active-prefix {
+    background-color: #D8DB2F;
+  }
+
+  .payment-type {
+    /* border: 1px solid #ccc; */
+    padding: 10px 14px;
+    display: inline-block;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .active-payment {
+    border: 1px solid yellow;
+  }
+
+  .input-radio{
+    cursor: pointer;
+  }
   .footer {
     flex: 1;
     margin-inline: 0;
