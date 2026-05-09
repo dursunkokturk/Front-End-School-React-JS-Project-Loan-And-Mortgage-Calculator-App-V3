@@ -78,7 +78,8 @@ main {
 }
 
 .active-radio {
-  border: 1px solid #D8DB2F; /* sarı */
+  border: 1px solid #D8DB2F;
+  /* sarı */
   background-color: rgba(216, 219, 47, 0.08);
 }
 
@@ -288,9 +289,18 @@ button img {
     border: 1px solid yellow;
   }
 
-  .input-radio{
+  .input-radio {
     cursor: pointer;
   }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #f9fc6e;
+  }
+
   .footer {
     flex: 1;
     margin-inline: 0;
