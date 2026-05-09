@@ -54,7 +54,7 @@ export default function App() {
             </div>
           </div>
           <div className="form-button">
-            <button><img src={Calculator} alt="" />Geri Ödemeleri Hesapla</button>
+            <button><img src={Calculator} alt="" />Taksitleri Hesapla</button>
           </div>
         </main>
         <footer className='footer'>
