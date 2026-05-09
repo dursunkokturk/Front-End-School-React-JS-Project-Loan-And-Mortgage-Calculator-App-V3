@@ -7,6 +7,7 @@ export default function App() {
   const [mortgageAmount, setMortgageAmount] = useState("");
   const [mortgageTerm, setMortgageTerm] = useState("");
   const [interestRate, setInterestRate] = useState("");
+  const [mortgageType, setMortgageType] = useState("");
 
   return (
     <>
@@ -74,11 +75,25 @@ export default function App() {
             <div className="form-group">
               <h4>Kira ve İpotek Tipi</h4>
               <div className="input-radio">
-                <input type="radio" className='radio' name='payment' />
+                <input
+                  type="radio"
+                  className='radio'
+                  name='payment'
+                  value="repayment"
+                  checked={mortgageType === "repayment"}
+                  onChange={(e) => setMortgageType(e.target.value)}
+                />
                 <span className="payment-type">Geri Ödeme</span>
               </div>
               <div className="input-radio">
-                <input type="radio" className='radio' name='payment' />
+                <input
+                  type="radio"
+                  className='radio'
+                  name='payment'
+                  value="interest-only"
+                  checked={mortgageType === "interest-only"}
+                  onChange={(e) => setMortgageType(e.target.value)}
+                />
                 <span className="payment-type">Sadece Faiz</span>
               </div>
             </div>
