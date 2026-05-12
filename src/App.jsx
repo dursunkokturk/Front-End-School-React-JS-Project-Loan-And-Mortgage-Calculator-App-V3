@@ -31,7 +31,7 @@ export default function App() {
     const newErrors = {};
 
     if (!mortgageAmount.trim()) {
-      newErrors.amount = "Bu Alan Zorunludur";
+      newErrors.amount = "Kredi Tutarı Giriniz";
     } else if (!isValidNumber(mortgageAmount)) {
       newErrors.amount = "Sadece Sayı Giriniz";
     } else if (Number(mortgageAmount) <= 0) {
@@ -39,7 +39,7 @@ export default function App() {
     }
 
     if (!mortgageTerm.trim()) {
-      newErrors.term = "Bu Alan Zorunludur";
+      newErrors.term = "Vade Süresi Giriniz";
     } else if (!isValidNumber(mortgageTerm)) {
       newErrors.term = "Sadece Sayı Giriniz";
     } else if (Number(mortgageTerm) <= 0) {
@@ -47,7 +47,7 @@ export default function App() {
     }
 
     if (!interestRate.trim()) {
-      newErrors.interest = "Bu Alan Zorunludur";
+      newErrors.interest = "Faiz Oranı Giriniz";
     } else if (!isValidNumber(interestRate)) {
       newErrors.interest = "Sadece Sayı Giriniz";
     } else if (Number(interestRate) <= 0) {
