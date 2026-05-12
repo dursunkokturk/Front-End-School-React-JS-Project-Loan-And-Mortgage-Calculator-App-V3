@@ -11,6 +11,10 @@ export default function App() {
   const [activeField, setActiveField] = useState("");
   const [errors, setErrors] = useState({});
 
+  const principal = Number(mortgageAmount);
+  const years = Number(mortgageTerm);
+  const annualRate = Number(interestRate);
+
   const isValidNumber = (value) => {
     return /^\d*\.?\d+$/.test(value);
   };
