@@ -9,6 +9,33 @@ export default function App() {
   const [interestRate, setInterestRate] = useState("");
   const [mortgageType, setMortgageType] = useState("");
   const [activeField, setActiveField] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = () => {
+    const newErrors = {};
+
+    if (!mortgageAmount.trim()) {
+      newErrors.amount = "Bu Alan Zorunludur";
+    }
+
+    if (!mortgageTerm.trim()) {
+      newErrors.term = "Bu Alan Zorunludur";
+    }
+
+    if (!interestRate.trim()) {
+      newErrors.interest = "Bu Alan Zorunludur";
+    }
+
+    if (!mortgageType) {
+      newErrors.type = "Bir Seçim Yapınız";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form başarılı");
+    }
+  };
 
   return (
     <>
@@ -25,7 +52,7 @@ export default function App() {
             </div>
             <div className="form-group">
               <h4>Kredi Tutarı</h4>
-              <div className="input-box">
+              <div className={`input-box ${errors.amount ? "error-box" : ""}`}>
                 <span className={`prefix ${activeField === "amount" ? "active-prefix" : ""}`}>₺</span>
                 <input
                   type="text"
@@ -39,13 +66,14 @@ export default function App() {
                     setMortgageAmount(value);
                   }}
                 />
+                {errors.amount && <p className="error-text">{errors.amount}</p>}
               </div>
             </div>
 
             <div className="mortgage-term-and-interest-rate">
               <div className="form-group">
                 <h4>İpotek Vadesi</h4>
-                <div className="input-box">
+                <div className={`input-box ${errors.term ? "error-box" : ""}`}>
                   <input type="text"
                     value={mortgageTerm}
                     placeholder='5'
@@ -56,13 +84,14 @@ export default function App() {
                       const value = e.target.value;
                       setMortgageTerm(value);
                     }} />
+                  {errors.term && <p className="error-text">{errors.term}</p>}
                   <span className={`prefix ${activeField === "term" ? "active-prefix" : ""}`}>Yıl</span>
                 </div>
               </div>
 
               <div className="form-group">
                 <h4>Yüzde Oranı</h4>
-                <div className="input-box">
+                <div className={`input-box ${errors.interest ? "error-box" : ""}`}>
                   <input
                     type="text"
                     value={interestRate}
@@ -75,6 +104,7 @@ export default function App() {
                       setInterestRate(value);
                     }}
                   />
+                  {errors.interest && <p className="error-text">{errors.interest}</p>}
                   <span className={`prefix ${activeField === "interest" ? "active-prefix" : ""}`}>%</span>
                 </div>
               </div>
@@ -108,9 +138,12 @@ export default function App() {
                 />
                 <span className="payment-type">Sadece Faiz</span>
               </label>
+              {errors.type && (
+                <p className="error-text">{errors.type}</p>
+              )}
             </div>
             <div className="form-button">
-              <button><img src={Calculator} alt="" />Taksitleri Hesapla</button>
+              <button onClick={handleSubmit}><img src={Calculator} alt="" />Taksitleri Hesapla</button>
             </div>
           </main>
         </div>

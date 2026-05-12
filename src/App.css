@@ -79,8 +79,11 @@ main {
 
 .active-radio {
   border: 1px solid #D8DB2F;
-  /* sarı */
   background-color: rgba(216, 219, 47, 0.08);
+}
+
+.input-radio:hover {
+  border: 1px solid #133041;
 }
 
 .input-radio .radio {
@@ -178,6 +181,16 @@ button img {
   padding-bottom: 24px;
 }
 
+.error-box {
+  border: 1px solid #d73328;
+}
+
+.error-text {
+  color: #d73328;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
 @media (min-width:768px) {
   body {
     background-color: #E4F4FD;
@@ -266,10 +279,12 @@ button img {
 
   .input-box input:hover {
     cursor: pointer;
+    border: 1px solid #133041;
   }
 
   .input-box input:focus {
     cursor: text;
+    border: 1px solid #D8DB2F;
   }
 
   .active-prefix {
