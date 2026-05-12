@@ -65,6 +65,14 @@ export default function App() {
     }
   };
 
+  const handleClearAll = (e) => {
+    e.preventDefault();
+    setMortgageAmount("");
+    setMortgageTerm("");
+    setInterestRate("");
+    setMortgageType("");
+  };
+
   return (
     <>
       <div className="container">
