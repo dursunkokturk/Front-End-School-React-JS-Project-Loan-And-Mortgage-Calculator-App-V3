@@ -16,14 +16,26 @@ export default function App() {
 
     if (!mortgageAmount.trim()) {
       newErrors.amount = "Bu Alan Zorunludur";
+    } else if (isNaN(mortgageAmount)) {
+      newErrors.amount = "Sadece Sayı Giriniz";
+    } else if (Number(mortgageAmount) <= 0) {
+      newErrors.amount = "0'dan Büyük Değer Giriniz";
     }
 
     if (!mortgageTerm.trim()) {
       newErrors.term = "Bu Alan Zorunludur";
+    } else if (isNaN(mortgageTerm)) {
+      newErrors.term = "Sadece Sayı Giriniz";
+    } else if (Number(mortgageTerm) <= 0) {
+      newErrors.term = "Geçerli Bir Vade Giriniz";
     }
 
     if (!interestRate.trim()) {
       newErrors.interest = "Bu Alan Zorunludur";
+    } else if (isNaN(interestRate)) {
+      newErrors.interest = "Sadece Sayı Giriniz";
+    } else if (Number(interestRate) <= 0) {
+      newErrors.interest = "Geçerli Faiz Oranı Giriniz";
     }
 
     if (!mortgageType) {

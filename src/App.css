@@ -60,8 +60,7 @@ main {
   color: #1f3b4d;
 }
 
-.prefix,
-.suffix {
+.prefix {
   background: #e2edf3;
   padding: 12px;
   color: #5a7d8a;
@@ -181,8 +180,9 @@ button img {
   padding-bottom: 24px;
 }
 
-.error-box {
+.error-box .error-box {
   border: 1px solid #d73328;
+  color: white;
 }
 
 .error-text {
