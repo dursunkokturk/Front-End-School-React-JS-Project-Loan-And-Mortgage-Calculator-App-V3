@@ -65,7 +65,7 @@ export default function App() {
             <div className="form-group">
               <h4>Kredi Tutarı</h4>
               <div className={`input-box ${errors.amount ? "error-box" : ""}`}>
-                <span className={`prefix ${activeField === "amount" ? "active-prefix" : ""}`}>₺</span>
+                <span className="prefix">₺</span>
                 <input
                   type="text"
                   value={mortgageAmount}
@@ -78,8 +78,8 @@ export default function App() {
                     setMortgageAmount(value);
                   }}
                 />
-                {errors.amount && <p className="error-text">{errors.amount}</p>}
               </div>
+              {errors.amount && <p className="error-text">{errors.amount}</p>}
             </div>
 
             <div className="mortgage-term-and-interest-rate">
@@ -95,10 +95,11 @@ export default function App() {
                     onChange={(e) => {
                       const value = e.target.value;
                       setMortgageTerm(value);
-                    }} />
-                  {errors.term && <p className="error-text">{errors.term}</p>}
+                    }}
+                  />
                   <span className={`prefix ${activeField === "term" ? "active-prefix" : ""}`}>Yıl</span>
                 </div>
+                {errors.term && <p className="error-text">{errors.term}</p>}
               </div>
 
               <div className="form-group">
@@ -116,9 +117,9 @@ export default function App() {
                       setInterestRate(value);
                     }}
                   />
-                  {errors.interest && <p className="error-text">{errors.interest}</p>}
                   <span className={`prefix ${activeField === "interest" ? "active-prefix" : ""}`}>%</span>
                 </div>
+                {errors.interest && <p className="error-text">{errors.interest}</p>}
               </div>
             </div>
 
