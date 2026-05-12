@@ -11,12 +11,28 @@ export default function App() {
   const [activeField, setActiveField] = useState("");
   const [errors, setErrors] = useState({});
 
+  const isValidNumber = (value) => {
+    return /^\d*\.?\d+$/.test(value);
+  };
+
+  const setError = (field, message) => {
+    setErrors(prev => ({ ...prev, [field]: message }));
+  };
+
+  const clearError = (field) => {
+    setErrors(prev => {
+      const updated = { ...prev };
+      delete updated[field];
+      return updated;
+    });
+  };
+
   const handleSubmit = () => {
     const newErrors = {};
 
     if (!mortgageAmount.trim()) {
       newErrors.amount = "Bu Alan Zorunludur";
-    } else if (isNaN(mortgageAmount)) {
+    } else if (!isValidNumber(mortgageAmount)) {
       newErrors.amount = "Sadece Sayı Giriniz";
     } else if (Number(mortgageAmount) <= 0) {
       newErrors.amount = "0'dan Büyük Değer Giriniz";
@@ -24,7 +40,7 @@ export default function App() {
 
     if (!mortgageTerm.trim()) {
       newErrors.term = "Bu Alan Zorunludur";
-    } else if (isNaN(mortgageTerm)) {
+    } else if (!isValidNumber(mortgageTerm)) {
       newErrors.term = "Sadece Sayı Giriniz";
     } else if (Number(mortgageTerm) <= 0) {
       newErrors.term = "Geçerli Bir Vade Giriniz";
@@ -32,7 +48,7 @@ export default function App() {
 
     if (!interestRate.trim()) {
       newErrors.interest = "Bu Alan Zorunludur";
-    } else if (isNaN(interestRate)) {
+    } else if (!isValidNumber(interestRate)) {
       newErrors.interest = "Sadece Sayı Giriniz";
     } else if (Number(interestRate) <= 0) {
       newErrors.interest = "Geçerli Faiz Oranı Giriniz";
@@ -76,6 +92,11 @@ export default function App() {
                   onChange={(e) => {
                     const value = e.target.value;
                     setMortgageAmount(value);
+                    if (value && !isValidNumber(value)) {
+                      setErrors(prev => ({ ...prev, amount: "Sadece Sayı Giriniz" }));
+                    } else {
+                      clearError("amount");
+                    }
                   }}
                 />
               </div>
@@ -95,6 +116,11 @@ export default function App() {
                     onChange={(e) => {
                       const value = e.target.value;
                       setMortgageTerm(value);
+                      if (value && !isValidNumber(value)) {
+                        setErrors(prev => ({ ...prev, term: "Sadece Sayı Giriniz" }));
+                      } else {
+                        clearError("term");
+                      }
                     }}
                   />
                   <span className={`prefix ${activeField === "term" ? "active-prefix" : ""}`}>Yıl</span>
@@ -115,6 +141,11 @@ export default function App() {
                     onChange={(e) => {
                       const value = e.target.value;
                       setInterestRate(value);
+                      if (value && !isValidNumber(value)) {
+                        setError("interest", "Sadece Sayı Giriniz");
+                      } else {
+                        clearError("interest");
+                      }
                     }}
                   />
                   <span className={`prefix ${activeField === "interest" ? "active-prefix" : ""}`}>%</span>
