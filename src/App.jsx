@@ -10,10 +10,7 @@ export default function App() {
   const [mortgageType, setMortgageType] = useState("");
   const [activeField, setActiveField] = useState("");
   const [errors, setErrors] = useState({});
-
-  const principal = Number(mortgageAmount);
-  const years = Number(mortgageTerm);
-  const annualRate = Number(interestRate);
+  const [monthlyPayment, setMonthlyPayment] = useState(null);
 
   const isValidNumber = (value) => {
     return /^\d*\.?\d+$/.test(value);
@@ -65,7 +62,16 @@ export default function App() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form başarılı");
+      const principal = Number(mortgageAmount);
+      const years = Number(mortgageTerm);
+      const annualRate = Number(interestRate);
+
+      const monthlyRate = annualRate / 12 / 100;
+      const totalMonths = years * 12;
+
+      const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+
+      setMonthlyPayment(monthlyPayment.toFixed(2));
     }
   };
 
@@ -204,18 +210,27 @@ export default function App() {
           </main>
         </div>
         <footer className='footer'>
-          <img src={CalculateFooter} alt="" />
-          <h2>Sonuçlar Burada Gösterilir</h2>
-          <h4>Formu doldurun ve aylık taksit tutarlarınızı görmek için “taksitleri hesapla” düğmesine tıklayın.</h4>
-          {/* <h2>Sonuçlarınız</h2>
-          <h4>Sağladığınız bilgilere göre sonuçlarınız aşağıda gösterilmektedir. Sonuçları değiştirmek için formu düzenleyin ve “geri ödemeleri hesapla” seçeneğine tekrar tıklayın.</h4>
-          <div className="monthly-payment">
-            <h4>Aylık Taksitleriniz</h4>
-            <h1>--</h1>
-            <div className="separator"></div>
-            <h4>Vade boyunca ödeyeceğiniz toplam tutar</h4>
-            <h2 className='total-amount'><span>₺</span>--</h2>
-          </div> */}
+
+          {monthlyPayment ? (
+            <>
+              <h2>Sonuçlarınız</h2>
+              <h4>Sağladığınız bilgilere göre sonuçlarınız aşağıda gösterilmektedir. Sonuçları değiştirmek için formu düzenleyin ve “geri ödemeleri hesapla” seçeneğine tekrar tıklayın.</h4>
+              <div className="monthly-payment">
+                <h4>Aylık Taksitleriniz</h4>
+                <h1>₺ {monthlyPayment}</h1>
+                <div className="separator"></div>
+                <h4>Vade boyunca ödeyeceğiniz toplam tutar</h4>
+                <h2 className='total-amount'><span>₺</span>--</h2>
+              </div>
+            </>
+          ) : (
+            <>
+              <img src={CalculateFooter} alt="" />
+              <h2>Sonuçlar Burada Gösterilir</h2>
+              <h4>Formu doldurun ve aylık taksit tutarlarınızı görmek için “taksitleri hesapla” düğmesine tıklayın.</h4>
+            </>
+          )}
+
         </footer>
       </div>
     </>
