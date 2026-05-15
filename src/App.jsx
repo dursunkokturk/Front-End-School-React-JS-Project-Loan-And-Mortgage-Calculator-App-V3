@@ -1,7 +1,7 @@
 import Calculator from './assets/img/calculator.png'
 import CalculateFooter from './assets/img/calculate-footer.png'
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function App() {
   const [mortgageAmount, setMortgageAmount] = useState("");
@@ -28,6 +28,39 @@ export default function App() {
       return updated;
     });
   };
+
+  // ✅ YENİ: Faiz oranı veya vade değişince otomatik yeniden hesapla
+  useEffect(() => {
+    // Hesaplama Butonuna Tiklanmadi Ise Dokunma
+    if (monthlyPayment === null) return;
+
+    // Girilen Degerler Gecersiz Ise Sonucu Sifirla
+    if ( !mortgageAmount || !mortgageTerm || !interestRate || !mortgageType || !isValidNumber(interestRate) || !isValidNumber(mortgageTerm) || !isValidNumber(mortgageAmount) || Number(interestRate) <= 0 || Number(mortgageTerm) <= 0 || Number(mortgageAmount) <= 0 ) {
+      setMonthlyPayment(null);
+      setTotalPayment(null);
+      return;
+    }
+
+    const principal = Number(mortgageAmount);
+    const years = Number(mortgageTerm);
+    const annualRate = Number(interestRate);
+    const monthlyRate = annualRate / 12 / 100;
+    const totalMonths = years * 12;
+
+    let calculatedMonthlyPayment;
+
+    if (mortgageType === "repayment") {
+      calculatedMonthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+    } else {
+      calculatedMonthlyPayment = principal * monthlyRate;
+    }
+
+    const calculatedTotalPayment = calculatedMonthlyPayment * totalMonths;
+
+    setMonthlyPayment(calculatedMonthlyPayment.toFixed(2));
+    setTotalPayment(calculatedTotalPayment.toFixed(2));
+
+  }, [interestRate, mortgageTerm]); // Sadece Faiz Orani ve Taksit Suresi Degisince Tetiklenir
 
   const handleSubmit = () => {
     const newErrors = {};
