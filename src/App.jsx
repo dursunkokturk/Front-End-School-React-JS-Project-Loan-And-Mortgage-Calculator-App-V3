@@ -97,6 +97,9 @@ export default function App() {
     // Sonuclari Siliyoruz
     setMonthlyPayment(null);
     setTotalPayment(null);
+
+    // Hata Mesajlarini Siliyoruz
+    setErrors({});
   };
 
   return (
@@ -249,7 +252,7 @@ export default function App() {
           )}
 
         </footer>
-        
+
       </div>
     </>
   )
