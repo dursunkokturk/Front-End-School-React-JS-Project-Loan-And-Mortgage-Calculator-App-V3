@@ -70,7 +70,15 @@ export default function App() {
       const monthlyRate = annualRate / 12 / 100;
       const totalMonths = years * 12;
 
-      const calculatedMonthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      let calculatedMonthlyPayment;
+
+      if (mortgageType === "repayment") {
+        // Anapara + Faiz Hesaplama
+        calculatedMonthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      } else {
+        // Sadece Faiz Hesaplama
+        calculatedMonthlyPayment = principal * monthlyRate;
+      }
 
       const calculatedTotalPayment = calculatedMonthlyPayment * totalMonths;
 
@@ -85,6 +93,10 @@ export default function App() {
     setMortgageTerm("");
     setInterestRate("");
     setMortgageType("");
+
+    // Sonuclari Siliyoruz
+    setMonthlyPayment(null);
+    setTotalPayment(null);
   };
 
   return (
@@ -93,7 +105,7 @@ export default function App() {
         <div className="header-and-main">
           <header className='header'>
             <h2>Kredi ve İpotek Hesaplama</h2>
-            <a href="" className='clear-btn'>Hepsini Sil</a>
+            <a href="" className='clear-btn' onClick={handleClearAll}>Hepsini Sil</a>
           </header>
           <main className='main'>
 
@@ -213,6 +225,7 @@ export default function App() {
             </div>
           </main>
         </div>
+
         <footer className='footer'>
 
           {monthlyPayment ? (
@@ -236,6 +249,7 @@ export default function App() {
           )}
 
         </footer>
+        
       </div>
     </>
   )
