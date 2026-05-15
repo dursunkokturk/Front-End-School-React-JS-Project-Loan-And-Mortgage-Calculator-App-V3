@@ -29,7 +29,7 @@ export default function App() {
     });
   };
 
-  // ✅ YENİ: Faiz oranı veya vade değişince otomatik yeniden hesapla
+  // Faiz Orani veya Vade Degisince Butona Tiklanmadan Otomatik Hesaplama
   useEffect(() => {
     // Hesaplama Butonuna Tiklanmadi Ise Dokunma
     if (monthlyPayment === null) return;
