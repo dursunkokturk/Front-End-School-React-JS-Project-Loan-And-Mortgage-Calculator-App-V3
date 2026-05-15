@@ -11,6 +11,7 @@ export default function App() {
   const [activeField, setActiveField] = useState("");
   const [errors, setErrors] = useState({});
   const [monthlyPayment, setMonthlyPayment] = useState(null);
+  const [totalPayment, setTotalPayment] = useState(null);
 
   const isValidNumber = (value) => {
     return /^\d*\.?\d+$/.test(value);
@@ -69,9 +70,12 @@ export default function App() {
       const monthlyRate = annualRate / 12 / 100;
       const totalMonths = years * 12;
 
-      const monthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+      const calculatedMonthlyPayment = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
 
-      setMonthlyPayment(monthlyPayment.toFixed(2));
+      const calculatedTotalPayment = calculatedMonthlyPayment * totalMonths;
+
+      setMonthlyPayment(calculatedMonthlyPayment.toFixed(2))
+      setTotalPayment(calculatedTotalPayment.toFixed(2));
     }
   };
 
@@ -220,7 +224,7 @@ export default function App() {
                 <h1>₺ {monthlyPayment}</h1>
                 <div className="separator"></div>
                 <h4>Vade boyunca ödeyeceğiniz toplam tutar</h4>
-                <h2 className='total-amount'><span>₺</span>--</h2>
+                <h2 className='total-amount'><span>₺</span>{totalPayment}</h2>
               </div>
             </>
           ) : (
